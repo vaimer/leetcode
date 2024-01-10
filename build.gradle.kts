@@ -2,11 +2,6 @@ plugins {
     kotlin("jvm") version "1.9.21"
 }
 
-plugins {
-    // Apply the Kotlin JVM plugin to add support for Kotlin.
-    id("org.jetbrains.kotlin.jvm") version "1.9.21"
-}
-
 allprojects {
     repositories {
         mavenCentral()
