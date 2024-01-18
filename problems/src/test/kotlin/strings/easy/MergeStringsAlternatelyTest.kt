@@ -1,34 +1,24 @@
 package strings.easy
 
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments.of
+import org.junit.jupiter.params.provider.MethodSource
 
 class MergeStringsAlternatelyTest {
 
-    @Test
-    fun `test case 1, words have equal length`() {
-        val word1 = "abc"
-        val word2 = "pqr"
-        val expected = "apbqcr"
-
-        assertEquals(expected, MergeStringsAlternately.mergeAlternately(word1, word2))
+    companion object {
+        @JvmStatic
+        fun testData() = listOf(
+            of("abc", "pqr", "apbqcr"),
+            of("ab", "pqrs", "apbqrs"),
+            of("abcd", "pq", "apbqcd")
+        )
     }
 
-    @Test
-    fun `test case 2, second word is longer`() {
-        val word1 = "ab"
-        val word2 = "pqrs"
-        val expected = "apbqrs"
-
-        assertEquals(expected, MergeStringsAlternately.mergeAlternately(word1, word2))
-    }
-
-    @Test
-    fun `test case 3, first word is longer`() {
-        val word1 = "abcd"
-        val word2 = "pq"
-        val expected = "apbqcd"
-
+    @ParameterizedTest
+    @MethodSource("testData")
+    fun `should successfully merge two strings`(word1: String, word2: String, expected: String) {
         assertEquals(expected, MergeStringsAlternately.mergeAlternately(word1, word2))
     }
 }
