@@ -10,6 +10,13 @@ package medium
  * When a value is added, add it to the list and store the index in the map.
  * When a value is removed, remove it from the list and update the index in the map.
  * When a random value is requested, generate a random index and return the value at that index.
+ * 
+ * Input
+ * ["RandomizedSet", "insert", "remove", "insert", "getRandom", "remove", "insert", "getRandom"]
+ * [[], [1], [2], [2], [], [1], [2], []]
+ * Output
+ * [null, true, false, true, 2, true, false, 2]
+ *
  */
 class RandomizedSet() {
 
