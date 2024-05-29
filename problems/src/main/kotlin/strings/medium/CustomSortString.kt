@@ -4,16 +4,16 @@ import java.util.PriorityQueue
 
 /**
  * Problem: 791. Custom Sort String
- * S and T are strings composed of lowercase letters. In S, no letter occurs more than once.
- * S was sorted in some custom order previously.
- * We want to permute the characters of T so that they match the order that S was sorted.
+ * order and S are strings composed of lowercase letters. In order, no letter occurs more than once.
+ * order was sorted in some custom order previously.
+ * We want to permute the characters of S so that they match the order that order was sorted.
  * 
  * Solution:
- * The idea is to create a map of the order of the characters in S.
- * We can then add the characters of T to a priority queue based on the order of the characters in S.
+ * The idea is to create a map of the order of the characters in Order string.
+ * We can then add the characters of S to a priority queue based on the order of the characters in Order string.
  * We can then poll the characters from the priority queue and return the result.
- * The time complexity of this solution is O(nlogn) where n is the number of characters in T.
- * The space complexity of this solution is O(n) where n is the number of characters in T.
+ * The time complexity of this solution is O(nlogn) where n is the number of characters in S.
+ * The space complexity of this solution is O(n) where n is the number of characters in S.
  */
 object CustomSortString {
     fun customSortString(order: String, s: String): String {
