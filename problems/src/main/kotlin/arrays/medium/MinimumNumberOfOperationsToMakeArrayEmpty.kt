@@ -16,33 +16,32 @@ package arrays.medium
  * Finally, we will return the steps.
  */
 object MinimumNumberOfOperationsToMakeArrayEmpty {
-    class Solution {
-        fun minOperations(nums: IntArray): Int {
-            val frequency = mutableMapOf<Int, Int>()
+    fun minOperations(nums: IntArray): Int {
+        val frequency = mutableMapOf<Int, Int>()
 
-            nums.forEach{ frequency[it] = frequency.getOrDefault(it, 0) + 1 }
+        nums.forEach { frequency[it] = frequency.getOrDefault(it, 0) + 1 }
 
-            var steps = 0
+        var steps = 0
 
-            for(value in frequency.values) {
+        for (value in frequency.values) {
 
-                when {
-                    value == 1 -> {
-                        return -1
-                    }
+            when {
+                value == 1 -> {
+                    return -1
+                }
 
-                    value % 3 == 0 -> {
-                        steps += value / 3
-                        continue
-                    }
+                value % 3 == 0 -> {
+                    steps += value / 3
+                    continue
+                }
 
-                    value % 3 != 0 -> {
-                        steps += value / 3 + 1
-                        continue
-                    }
+                value % 3 != 0 -> {
+                    steps += value / 3 + 1
+                    continue
                 }
             }
-
-            return steps
         }
+
+        return steps
+    }
 }
