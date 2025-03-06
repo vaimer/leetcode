@@ -1,4 +1,4 @@
-package dfs.medium
+package medium
 
 import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.params.ParameterizedTest

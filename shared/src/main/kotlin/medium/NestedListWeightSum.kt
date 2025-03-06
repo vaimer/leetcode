@@ -1,4 +1,4 @@
-package dfs.medium
+package medium
 
 /**
  * Problem: 339. Nested List Weight Sum

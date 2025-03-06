@@ -5,7 +5,7 @@ package hashtable.easy
  * Write an algorithm to determine if a number n is happy.
  * A happy number is a number defined by the following process:
  * Starting with any positive integer, replace the number by the sum of the squares of its digits.
- * 
+ *
  * Solution:
  * We will keep on calculating the sum of the squares of the digits of the number until we reach 1.
  * If we reach 1, we will return true.
@@ -16,7 +16,7 @@ package hashtable.easy
  */
 object HappyNumber {
     fun isHappy(n: Int): Boolean {
-        if(n == 1) {
+        if (n == 1) {
             return true
         }
 
@@ -24,12 +24,12 @@ object HappyNumber {
 
         var currentNumber = n
 
-        while(true) {
-            if(currentNumber == 1) {
+        while (true) {
+            if (currentNumber == 1) {
                 return true
             }
 
-            if(results.contains(currentNumber)){
+            if (results.contains(currentNumber)) {
                 return false
             }
 
@@ -43,7 +43,7 @@ object HappyNumber {
     fun calculateSqures(n: Int): Int {
         var result = 0
         var temp = n
-        while(temp != 0) {
+        while (temp != 0) {
             val number = temp % 10
             result += number * number
             temp = temp / 10
@@ -52,3 +52,4 @@ object HappyNumber {
         return result
     }
 }
+
